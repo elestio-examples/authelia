@@ -12,6 +12,7 @@ services:
       - 172.17.0.1:9091:9091
     environment:
       - TZ=Australia/Melbourne
+      - AUTHELIA_DEFAULT_REDIRECTION_URL=${BASE_URL}
 
   redis:
     image: redis:alpine

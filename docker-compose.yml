@@ -13,12 +13,12 @@ services:
     environment:
       - TZ=Australia/Melbourne
 
-  # redis:
-  #   image: redis:alpine
-  #   restart: always
-  #   volumes:
-  #     - ./redis:/data
-  #   expose:
-  #     - 6379
-  #   environment:
-  #     - TZ=Australia/Melbourne
+  redis:
+    image: redis:alpine
+    restart: always
+    volumes:
+      - ./redis:/data
+    expose:
+      - 6379
+    environment:
+      - TZ=Australia/Melbourne

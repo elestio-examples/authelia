@@ -6,8 +6,6 @@ services:
     restart: always
     volumes:
       - ./authelia:/config
-    networks:
-      - net
     ports:
       - 172.17.0.1:9091:9091
     environment:
@@ -18,8 +16,6 @@ services:
     restart: always
     volumes:
       - ./redis:/data
-    networks:
-      - net
     expose:
       - 6379
     environment:

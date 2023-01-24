@@ -2,21 +2,23 @@ version: '3.3'
 
 services:
   authelia:
-    image: authelia/authelia
+    image: docker.io/authelia/authelia:latest
     restart: always
     volumes:
       - ./authelia:/config
+    expose:
+      - 9091
     ports:
       - 172.17.0.1:9091:9091
     environment:
       - TZ=Australia/Melbourne
 
-  redis:
-    image: redis:alpine
-    restart: always
-    volumes:
-      - ./redis:/data
-    expose:
-      - 6379
-    environment:
-      - TZ=Australia/Melbourne
+  # redis:
+  #   image: redis:alpine
+  #   restart: always
+  #   volumes:
+  #     - ./redis:/data
+  #   expose:
+  #     - 6379
+  #   environment:
+  #     - TZ=Australia/Melbourne

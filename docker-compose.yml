@@ -1,12 +1,26 @@
 version: '3.3'
-
 services:
   authelia:
     image: authelia/authelia
-    restart: always
+#   image: authelia/authelia:4.31
     volumes:
-      - ./authelia:/config
+      - ./config:/config
     ports:
       - 172.17.0.1:9091:9091
+    restart: unless-stopped
+    healthcheck:
+      disable: true
     environment:
-      - TZ=Australia/Melbourne
+      - TZ=America/Chicago
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    volumes:
+      - ./redis:/data
+    expose:
+      - 6379
+    restart: unless-stopped
+    environment:
+      - TZ=America/Chicago

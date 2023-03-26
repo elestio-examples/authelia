@@ -13,5 +13,17 @@ Deploy Authelia server with CI/CD on Elestio
 You can can open Authelia UI here:
 
     URL: https://[CI_CD_DOMAIN]
-    email:[ADMIN_EMAIL]
+    login: root
     password: [ADMIN_PASSWORD]
+
+# Adding new address
+
+To add a new address, go to the Tools tab, and choose VS Code
+
+Then go the the configuration.yml in config folder.
+after line 52, type your domain and your policy.
+
+In the burger icon on the top-left, click on it, then Terminal > New Terminal and type:
+
+    docker-compose down;
+    docker-compose up -d;

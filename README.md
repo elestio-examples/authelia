@@ -16,14 +16,15 @@ You can can open Authelia UI here:
     login: root
     password: [ADMIN_PASSWORD]
 
-# Adding new address
+# Configuration
 
-To add a new address, go to the Tools tab, and choose VS Code
+Authelia does not have a WEB UI to change the configuration, to do that you will need to edit the configuration file located in:
+    
+    ./config/configuration.yml
+   
+You can edit this file over SSH or VS Code (Elestio dashboard > Tools tab > VS Code)
 
-Then go the the configuration.yml in config folder.
-after line 52, type your domain and your policy.
-
-In the burger icon on the top-left, click on it, then Terminal > New Terminal and type:
+After editing your configuration file, you must restart the stack, you can do that from Elestio dashboard or directly in the terminal with those commands:
 
     docker-compose down;
     docker-compose up -d;

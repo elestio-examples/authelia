@@ -6,6 +6,6 @@ services:
       - ./config:/config
     ports:
       - 172.17.0.1:9091:9091
-    restart: unless-stopped
+    restart: always
     environment:
       - TZ=America/Chicago

@@ -10,7 +10,7 @@ Deploy Authelia server with CI/CD on Elestio
 
 # Once deployed ...
 
-You can can open Authelia UI here:
+You can open Authelia UI here:
 
     URL: https://[CI_CD_DOMAIN]
     login: root

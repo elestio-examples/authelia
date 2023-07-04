@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   authelia:
-    image: authelia/authelia
+    image: authelia/authelia:${SOFTWARE_VERSION_TAG}
     volumes:
       - ./config:/config
     ports:

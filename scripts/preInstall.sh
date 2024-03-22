@@ -6,7 +6,7 @@ mkdir -p ./config
 chown -R 1000:1000 ./redis
 chown -R 1000:1000 ./config
 
-newArgonPassTemp=$(docker run authelia/authelia:latest authelia hash-password $ADMIN_PASSWORD)
+newArgonPassTemp=$(docker run authelia/authelia:latest authelia crypto hash generate argon2 --password $ADMIN_PASSWORD)
 newArgonPass=${newArgonPassTemp:8:104}
 JWT=${JWT:-`openssl rand -hex 16`}
 SECRET_TO_CHANGE=${SECRET_TO_CHANGE:-`openssl rand -hex 16`}
